@@ -5,6 +5,7 @@
   "single-instance": false,
 
   "window": {
+    "toobar": false,
     "width": 1024,
     "height": 768,
     "min_width": 800,
