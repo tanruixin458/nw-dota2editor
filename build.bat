@@ -14,6 +14,3 @@ copy /y exe\Dota2KVEditor.exe build\%dt%\Dota2KVEditor.exe
 7za a -tzip dota2editor.nw index.html package.json public partials srv icon
 move /y _VERSION build\%dt%\_VERSION
 move /y dota2editor.nw build\%dt%\dota2editor.nw
-
-echo build success!
-pause

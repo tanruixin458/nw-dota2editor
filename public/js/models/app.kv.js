@@ -99,7 +99,7 @@ app.factory("KV", function(NODE, $q, Config) {
 
 		// _my.writeComment(APP_APP_NAME);
 		// _my.writeComment("Get latest version: " + APP_APP_GITHUB);
-		_my.write('');
+		// _my.write('');
 		_my.write('"$1"', title);
 		_my.write('{');
 		$.each(initKV || {}, function(key, value) {
