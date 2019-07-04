@@ -7,7 +7,8 @@ components.directive('operation', function($compile) {
 			operation: "=",		// KV Entity
 			ability: "=",		// Source Ability
 		},
-		controller: function($scope, $element, $attrs, Operation, UI) {
+		controller: function($scope, $element, $attrs, Locale, Operation, UI) {
+			$scope.Locale = Locale;
 			$scope.Operation = Operation;
 			$scope.OAM = Operation.OperationAttrMap;
 			$scope.UI = UI;
@@ -36,7 +37,7 @@ components.directive('operation', function($compile) {
 		template:
 		'<ul class="ability-operation-body">'+
 			'<li ng-repeat="opAttr in Operation.EventOperationMap[operation.key][2] track by $index">'+
-				'<span class="text-muted">{{opAttr}}:</span>'+
+				'<span class="text-muted">{{opAttr}} 【{{Locale(opAttr)}}】:</span>'+
 				'<a class="fa fa-share-alt" ng-if="OAM[opAttr].link" ng-click="doLink(opAttr)"></a>'+
 				// TODO: Link '<a class="fa fa-link" ng-if="getOpColLink(_index)" ng-click="getOpColLink(_index)()"></a>'+
 
