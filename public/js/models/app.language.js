@@ -101,7 +101,8 @@ app.factory("Language", function($q, KV, NODE, Locale) {
 	Language.UnitPrefix = "";
 	Language.UnitLang = [
 		{attr: "", desc: "名称", title: "name", type: "text", frequent: true},
-		{attr: "bio", desc: "描述", type: "blob", frequent: true},
+		{attr: "bio", desc: "描述(旧版,可能无效)", type: "blob", frequent: true},
+		{attr: "hype", desc: "描述(新版)", type: "blob", frequent: true},
 	];
 
 	return Language;

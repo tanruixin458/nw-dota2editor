@@ -65,6 +65,7 @@ var _unitCtrl = function(isHero) {
 						$.each(globalContent.languageList, function(i, lang) {
 							lang.kv.set(Language.unitAttr(_clone, ""), lang.kv.get(Language.unitAttr($scope._newUnitFork, "")));
 							lang.kv.set(Language.unitAttr(_clone, "bio"), lang.kv.get(Language.unitAttr($scope._newUnitFork, "bio")));
+							lang.kv.set(Language.unitAttr(_clone, "hype"), lang.kv.get(Language.unitAttr($scope._newUnitFork, "hype")));
 						});
 					}
 
@@ -111,6 +112,9 @@ var _unitCtrl = function(isHero) {
 
 				if(lang.kv.get(oldName + "_bio")) lang.kv.set(newName + "_bio", lang.kv.get(oldName + "_bio"));
 				lang.kv.delete(oldName + "_bio");
+
+				if(lang.kv.get(oldName + "_hype")) lang.kv.set(newName + "_hype", lang.kv.get(oldName + "_hype"));
+				lang.kv.delete(oldName + "_hype");
 			});
 		};
 
