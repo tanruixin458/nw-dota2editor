@@ -28,43 +28,43 @@ app.factory("AppVersionSrv", function ($q, $http, $timeout, $compile, $rootScope
 		FS.readFile(AppVersionSrv.resPath + "_VERSION", "utf8", function (err, data) {
 			AppVersionSrv.version = data || "";
 
-			$http.get("https://raw.githubusercontent.com/zombieJ/nw-dota2editor-dist/master/dist/_VERSION").then(function (data) {
-				if(AppVersionSrv.version.trim() < data.data.trim()) {
-					// Require update
-					var $updateNotify = $.notify({
-						title: "<b>New Version Detected</b>",
-						content: "Detected new version of KV Editor." +
-								 " Click <a ng-click='update()'>HERE</a> for update.",
-						type: "warning",
-						timeout: 10000,
-						overtimeout: 5000,
-						region: "system"
-					});
+			// $http.get("https://raw.githubusercontent.com/zombieJ/nw-dota2editor-dist/master/dist/_VERSION").then(function (data) {
+			// 	if(AppVersionSrv.version.trim() < data.data.trim()) {
+			// 		// Require update
+			// 		var $updateNotify = $.notify({
+			// 			title: "<b>New Version Detected</b>",
+			// 			content: "Detected new version of KV Editor." +
+			// 					 " Click <a ng-click='update()'>HERE</a> for update.",
+			// 			type: "warning",
+			// 			timeout: 10000,
+			// 			overtimeout: 5000,
+			// 			region: "system"
+			// 		});
 
-					// Update Logic
-					var $scope = $rootScope.$new();
-					$compile($updateNotify)($scope);
-					$scope.update = function() {
-						$updateNotify.remove();
-						AppVersionSrv.updateState = AppVersionSrv.UPDATE_STATUS_UPDATING;
+			// 		// Update Logic
+			// 		var $scope = $rootScope.$new();
+			// 		$compile($updateNotify)($scope);
+			// 		$scope.update = function() {
+			// 			$updateNotify.remove();
+			// 			AppVersionSrv.updateState = AppVersionSrv.UPDATE_STATUS_UPDATING;
 
-						// Download latest version
-						AppVersionSrv.updatePromise = AppGitSrv.downloadGitFolder({repo: REPO, branch: BRANCH}, AppVersionSrv.resPath + "tmp", [
-							"dist/_VERSION",
-							"dist/dota2editor.nw"
-						], {name: "Update"});
-						AppVersionSrv.updatePromise.then(function() {
-							AppVersionSrv.updateState = AppVersionSrv.UPDATE_STATUS_FINISHED;
+			// 			// Download latest version
+			// 			AppVersionSrv.updatePromise = AppGitSrv.downloadGitFolder({repo: REPO, branch: BRANCH}, AppVersionSrv.resPath + "tmp", [
+			// 				"dist/_VERSION",
+			// 				"dist/dota2editor.nw"
+			// 			], {name: "Update"});
+			// 			AppVersionSrv.updatePromise.then(function() {
+			// 				AppVersionSrv.updateState = AppVersionSrv.UPDATE_STATUS_FINISHED;
 
-							AppFileSrv.writeFile(AppVersionSrv.resPath + "tmp/_DONE", "done");
-						}, function() {
-							AppVersionSrv.updateState = AppVersionSrv.UPDATE_STATUS_FAILED;
-						}, function(notify) {
-							AppVersionSrv.undateMSG = notify.msg;
-						});
-					};
-				}
-			});
+			// 				AppFileSrv.writeFile(AppVersionSrv.resPath + "tmp/_DONE", "done");
+			// 			}, function() {
+			// 				AppVersionSrv.updateState = AppVersionSrv.UPDATE_STATUS_FAILED;
+			// 			}, function(notify) {
+			// 				AppVersionSrv.undateMSG = notify.msg;
+			// 			});
+			// 		};
+			// 	}
+			// });
 		});
 	})();
 

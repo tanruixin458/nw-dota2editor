@@ -746,6 +746,7 @@ app.factory("Locale", function() {
 		GoldAmount: "金币数值",
 		ReliableGold: "可靠金币",
 		GrantXPGold: "获取金币经验",
+		Rotate: "旋转",
 		PitchYawRoll: "俯仰 自旋 翻转",
 
 		CASTER: "施法者",

@@ -97,8 +97,8 @@ app.factory("KV", function(NODE, $q, Config) {
 	_KV.Writer.prototype.withHeader = function(title, initKV) {
 		var _my = this;
 
-		_my.writeComment(APP_APP_NAME);
-		_my.writeComment("Get latest version: " + APP_APP_GITHUB);
+		// _my.writeComment(APP_APP_NAME);
+		// _my.writeComment("Get latest version: " + APP_APP_GITHUB);
 		_my.write('');
 		_my.write('"$1"', title);
 		_my.write('{');
