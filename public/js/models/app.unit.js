@@ -37,7 +37,7 @@ app.factory("Unit", function($q, $http, FS, Locale, Language, Config, KV, AppVer
 		}
 
 		// Force Keep Ability
-		for(var i = 1 ; i <= 16 ; i += 1) {
+		for(var i = 1 ; i <= 17 ; i += 1) {
 			_my.kv.assumeKey("Ability" + i).keep = true;
 		};
 
@@ -301,6 +301,7 @@ app.factory("Unit", function($q, $http, FS, Locale, Language, Config, KV, AppVer
 			{group: "ability", attr: "Ability14", type: "text", match: _match_ability},
 			{group: "ability", attr: "Ability15", type: "text", match: _match_ability},
 			{group: "ability", attr: "Ability16", type: "text", match: _match_ability},
+			{group: "ability", attr: "Ability17", type: "text", match: _match_ability},
 		],
 	];
 

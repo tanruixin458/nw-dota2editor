@@ -279,6 +279,7 @@ app.factory("Ability", function($q, Event, Modifier) {
 			{group: "target", attr: "AbilityUnitTargetFlags", type: "group"},
 			{group: "target", attr: "AbilityUnitDamageType", type: "single"},
 			{group: "target", attr: "SpellImmunityType", type: "single"},
+			{group: "target", attr: "SpellDispellableType", type: "single"},
 			{group: "target", attr: "CastFilterRejectCaster", type: "boolean"},
 			{group: "target", attr: "FightRecapLevel", type: "text"}
 		],
@@ -520,6 +521,12 @@ app.factory("Ability", function($q, Event, Modifier) {
 		["SPELL_IMMUNITY_ALLIES_NO",false],
 		["SPELL_IMMUNITY_ENEMIES_YES",false],
 		["SPELL_IMMUNITY_ENEMIES_NO",false]
+	];
+
+	Ability.SpellDispellableType = [
+		["SPELL_DISPELLABLE_NO"],
+		["SPELL_DISPELLABLE_YES"],
+		["SPELL_DISPELLABLE_YES_STRONG"]
 	];
 
 	Ability.AbilityType = [

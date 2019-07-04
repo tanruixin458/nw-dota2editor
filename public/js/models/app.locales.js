@@ -102,6 +102,7 @@ app.factory("Locale", function() {
 		AbilityUnitTargetFlags: "目标标记",
 		AbilityUnitDamageType: "伤害类型",
 		SpellImmunityType: "技能免疫类型",
+		SpellDispellableType: "技能驱散类型",
 		CastFilterRejectCaster: "对释放者无效",
 		FightRecapLevel: "战斗回放等级",
 
@@ -249,6 +250,10 @@ app.factory("Locale", function() {
 		SPELL_IMMUNITY_ALLIES_NO: "不能用于技能免疫的友方",
 		SPELL_IMMUNITY_ENEMIES_YES: "可以用于技能免疫的敌方",
 		SPELL_IMMUNITY_ENEMIES_NO: "不能用于技能免疫的敌方",
+
+		SPELL_DISPELLABLE_NO: "不可驱散",
+		SPELL_DISPELLABLE_YES: "弱驱散",
+		SPELL_DISPELLABLE_YES_STRONG: "仅强驱散",
 
 		DOTA_ABILITY_TYPE_BASIC: "普通技能",
 		DOTA_ABILITY_TYPE_ULTIMATE: "终极技能",
@@ -520,6 +525,7 @@ app.factory("Locale", function() {
 		Ability14: "技能14",
 		Ability15: "技能15",
 		Ability16: "技能16",
+		Ability17: "技能17",
 		AbilityLayout: "技能布局",
 		ArmorGain: "护甲获得",
 		ArmorPhysical: "物理护甲",
