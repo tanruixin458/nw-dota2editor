@@ -69,6 +69,7 @@ app.factory("Locale", function() {
 		Key: "键",
 		Value: "值",
 		Type: "类型",
+		LinkedSpecialBonus: "绑定天赋技能",
 		Target: "目标",
 		NewKV: "新建键值",
 		New: "新建",

@@ -127,7 +127,8 @@ var _abilityCtrl = function(isItem) {
 		$scope.addAbilitySpecial = function() {
 			$scope.ability.kv.assumeKey("AbilitySpecial", true).value.push(new KV("00", [
 				new KV("var_type", "FIELD_INTEGER"),
-				new KV()
+				new KV(),
+				new KV("LinkedSpecialBonus")
 			]));
 		};
 

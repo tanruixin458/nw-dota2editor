@@ -6,9 +6,9 @@
 
   "window": {
     "toolbar": false,
-    "width": 1024,
+    "width": 1366,
     "height": 768,
-    "min_width": 800,
+    "min_width": 1366,
     "icon": "icon/favicon.png"
   }
 }
